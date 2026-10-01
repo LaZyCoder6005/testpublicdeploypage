@@ -1,67 +1,87 @@
-{
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mein Prototyp</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+    body {
+      background-color: #f8fafc;
+      color: #1e293b;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 24px;
+    }
+    .card {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: #0f172a;
+    }
+    p {
+      color: #64748b;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    button {
+      background-color: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.15s ease;
+    }
+    button:hover {
+      background-color: #1d4ed8;
+    }
+    .counter {
+      margin-top: 16px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
 
-body {
-  background-color: var(--bg);
-  color: var(--text-main);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 24px;
-}
+  <div class="card">
+    <h1>Hallo Welt</h1>
+    <p>Das ist eine funktionale Standalone-HTML-Vorlage. Du kannst deinen Prototyp-Inhalt direkt hier einbetten.</p>
+    <button id="clickBtn">Klick mich</button>
+    <div class="counter" id="counterDisplay">Klicks: 0</div>
+  </div>
 
-.card {
-  background-color: var(--card-bg);
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  padding: 32px;
-  max-width: 480px;
-  width: 100%;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-  text-align: center;
-}
+  <script>
+    let count = 0;
+    const btn = document.getElementById('clickBtn');
+    const display = document.getElementById('counterDisplay');
 
-h1 {
-  font-size: 1.5rem;
-  margin-bottom: 12px;
-  color: var(--text-main);
-}
+    btn.addEventListener('click', () => {
+      count++;
+      display.textContent = `Klicks: ${count}`;
+    });
+  </script>
 
-p {
-  color: var(--text-muted);
-  line-height: 1.5;
-  margin-bottom: 24px;
-}
-
-.btn {
-  display: inline-block;
-  background-color: var(--primary);
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-size: 1rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.btn:hover {
-  background-color: var(--primary-hover);
-}
-
-.output {
-  margin-top: 20px;
-  font-size: 0.95rem;
-  color: var(--text-muted);
-}
-
-
-<button class="btn" id="actionBtn">Klick mich</button>
-<div class="output" id="output">Klicks: 0</div>
+</body>
+</html>
